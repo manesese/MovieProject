@@ -34,15 +34,9 @@ class BaseActivity : AppCompatActivity() {
         onReplaceFragment(SplashFragment(), false) // 인트로 애니메이션
     }
 
-    fun onReplaceFragment(fragment: Fragment, addToBackStack: Boolean = true, isVisibleBottomNav: Boolean = false) {
+    fun onReplaceFragment(fragment: Fragment, addToBackStack: Boolean = true) {
         if(!::binding.isInitialized) {
             binding = ActivityBaseBinding.inflate(layoutInflater)
-        }
-
-        if(isVisibleBottomNav) {
-            binding.bottomNav.visibility = View.VISIBLE
-        } else {
-            binding.bottomNav.visibility = View.GONE
         }
 
         supportFragmentManager.beginTransaction().let {
