@@ -14,9 +14,9 @@
 
         <ImageView
             android:id="@+id/splash_iv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/graph"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:src="@drawable/weather_icon"
             android:textColor="#fff500"
             android:textSize="36dp"
             android:textStyle="bold"
