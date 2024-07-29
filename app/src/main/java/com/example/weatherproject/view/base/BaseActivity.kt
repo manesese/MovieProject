@@ -44,7 +44,7 @@ class BaseActivity : AppCompatActivity() {
             if(addToBackStack) {
                 it.addToBackStack(null)
             }
-            it.commitAllowingStateLoss()//sd
+            it.commitAllowingStateLoss()//sds
         }
     }
 }
