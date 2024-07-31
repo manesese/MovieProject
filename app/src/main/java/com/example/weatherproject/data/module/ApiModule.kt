@@ -1,7 +1,7 @@
 package com.example.weatherproject.data.module
 
-import com.example.weatherproject.data.model.WeatherModel
-import com.example.weatherproject.data.network.WeatherApi
+import com.example.weatherproject.data.model.MovieModel
+import com.example.weatherproject.data.network.MovieApi
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import dagger.Module
 import dagger.Provides
@@ -33,7 +33,7 @@ object ApiModule {
     fun provideRetrofit(okHttpClient: OkHttpClient) = kotlin.run {
         Retrofit.Builder()
             .client(okHttpClient)
-            .baseUrl(WeatherModel.BASE_URL)
+            .baseUrl(MovieModel.BASE_URL)
             .addConverterFactory(
                 Json {
                     isLenient = true
@@ -47,5 +47,5 @@ object ApiModule {
 
     @Singleton
     @Provides
-    fun provideApiService(retrofit: Retrofit) = retrofit.create(WeatherApi::class.java)
+    fun provideApiService(retrofit: Retrofit) = retrofit.create(MovieApi::class.java)
 }

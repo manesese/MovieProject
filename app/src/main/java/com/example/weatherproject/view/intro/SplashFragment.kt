@@ -11,7 +11,7 @@ import android.view.animation.AnimationUtils
 import com.example.weatherproject.R
 import com.example.weatherproject.databinding.FragmentSplashBinding
 import com.example.weatherproject.view.base.BaseActivity
-import com.example.weatherproject.view.main.WeatherFragment
+import com.example.weatherproject.view.main.MovieFragment
 
 
 class SplashFragment : Fragment() {
@@ -50,7 +50,7 @@ class SplashFragment : Fragment() {
 
         //3초 후 화면 이동
         Handler(Looper.myLooper()!!).postDelayed({
-            activity.onReplaceFragment(WeatherFragment(), false)
+            activity.onReplaceFragment(MovieFragment(), false)
         }, 3000)
     }
 }

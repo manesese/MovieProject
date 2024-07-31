@@ -7,7 +7,9 @@ import androidx.fragment.app.Fragment
 import com.example.weatherproject.R
 import com.example.weatherproject.databinding.ActivityBaseBinding
 import com.example.weatherproject.view.intro.SplashFragment
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class BaseActivity : AppCompatActivity() {
     private lateinit var binding: ActivityBaseBinding
 

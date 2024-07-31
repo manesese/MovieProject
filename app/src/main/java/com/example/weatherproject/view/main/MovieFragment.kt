@@ -5,22 +5,29 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.weatherproject.databinding.FragmentWeatherBinding
+import androidx.fragment.app.viewModels
+import com.example.weatherproject.data.model.MovieModel
+import com.example.weatherproject.databinding.FragmentMovieBinding
 import com.example.weatherproject.view.base.BaseActivity
+import com.example.weatherproject.view.viewModel.MovieViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
-class WeatherFragment : Fragment() {
+@AndroidEntryPoint
+class MovieFragment : Fragment() {
 
-    private var _binding: FragmentWeatherBinding? = null
+    private var _binding: FragmentMovieBinding? = null
 
-    private val binding: FragmentWeatherBinding get() = _binding!!
+    private val binding: FragmentMovieBinding get() = _binding!!
     private val activity: BaseActivity by lazy {
         requireActivity() as BaseActivity
     }
 
+    private val movieViewmodel: MovieViewModel by viewModels()
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        _binding = FragmentWeatherBinding.inflate(layoutInflater)
+        _binding = FragmentMovieBinding.inflate(layoutInflater)
     }
 
     override fun onCreateView(
@@ -33,6 +40,8 @@ class WeatherFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        movieViewmodel.requestMovieChart(MovieModel.API_KEY, "20240730")
 
     }
 }
